@@ -8,12 +8,12 @@ export function Scanner({ onScan }) {
   let scannerAttemps = 0;
   const onDetected = (result) => {
     Quagga.offDetected(onDetected);
-    alert("isbn valido");
+    // alert("isbn valido");
 
     let isbn = result.codeResult.code;
     if (validateIsbn(isbn)) {
       alert(isbn);
-      onScan(isbn);
+      // onScan(isbn);
     } else {
       if (scannerAttemps > 4) {
         alert("Não é possivél ler o codigo do livro!");

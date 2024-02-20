@@ -8,7 +8,7 @@ export default function Main() {
   return (
     <>
       <Scanner onScan={setIsbn} />
-      <Results isbn={isbn} />
+      {/* <Results isbn={isbn} /> */}
     </>
   );
 }
