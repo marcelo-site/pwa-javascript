@@ -8,7 +8,7 @@ export function AppRoutes() {
   return (
     <Routes>
       <Route path="/book/:isbn" element={<BookDetails />} />
-      <Route path="/" element={<MainPage />} />
+      <Route path="/pwa-javascript" element={<MainPage />} />
     </Routes>
   );
 }
