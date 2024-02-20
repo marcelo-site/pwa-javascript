@@ -11,16 +11,17 @@ export function Scanner({ onScan }) {
     // alert("isbn valido");
 
     let isbn = result.codeResult.code;
-    if (validateIsbn(isbn)) {
-      alert(isbn);
-      // onScan(isbn);
-    } else {
-      if (scannerAttemps > 4) {
-        alert("Não é possivél ler o codigo do livro!");
-        // return;
-      }
-      // return;
-    }
+    alert(isbn);
+    // if (validateIsbn(isbn)) {
+    //   alert(isbn);
+    //   // onScan(isbn);
+    // } else {
+    //   if (scannerAttemps > 4) {
+    //     alert("Não é possivél ler o codigo do livro!");
+    //     // return;
+    //   }
+    //   // return;
+    // }
 
     scannerAttemps++;
     Quagga.onDetected(onDetected);
