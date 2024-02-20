@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/starter-project/static/js/main.f1094f48.js",
-    "service-worker.js": "/starter-project/service-worker.js",
-    "index.html": "/starter-project/index.html",
-    "main.f1094f48.js.map": "/starter-project/static/js/main.f1094f48.js.map"
+    "main.js": "/pwa-javascript/static/js/main.6507a9a5.js",
+    "service-worker.js": "/pwa-javascript/service-worker.js",
+    "index.html": "/pwa-javascript/index.html",
+    "main.6507a9a5.js.map": "/pwa-javascript/static/js/main.6507a9a5.js.map"
   },
   "entrypoints": [
-    "static/js/main.f1094f48.js"
+    "static/js/main.6507a9a5.js"
   ]
 }
