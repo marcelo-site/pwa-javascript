@@ -1,0 +1,22 @@
+{
+  "books": [
+    {
+      "id": "9788576082675",
+      "isbn": "9788576082675",
+      "name": "Codigo limpo",
+      "coverUrl": "https://m.media-amazon.com/images/I/71dH97FwGbL._AC_UL480_FMwebp_QL65_.jpg",
+      "rating": 4,
+      "promotionalPrice": 3.9,
+      "price": 99.9,
+      "scores": [
+        { "name": "Tecnologias", "value": 4.2 },
+        { "name": "Tecnologias", "value": 4.2 },
+        { "name": "Tecnologias", "value": 4.2 },
+        { "name": "Tecnologias", "value": 4.2 }
+      ],
+      "tecnologies": ["Java", "PHP", "Javascript"],
+      "requirements": ["Requsito1", "Requsito2", "Requsito3"],
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro consequatur aliquid minima sit rem molestias aliasfuga sunt quisquam vel cupiditate repellendus aliquam, saepe molestiae atque eos neque, incidunt id."
+    }
+  ]
+}
