@@ -5,17 +5,17 @@ import Quagga from "quagga";
 import { useCallback } from "react";
 
 export function Scanner({ onScan }) {
-  // let scannerAttemps = 0;
+  let scannerAttemps = 0;
   const onDetected = useCallback(
     (result) => {
       Quagga.offDetected(onDetected);
 
-      let isbn = result.codeResult.code;
-      onScan(isbn);
-      // if (scannerAttemps < 5) {
-      //   Quagga.onDetected(onDetected);
-      //   scannerAttemps++;
-      // }
+      let code = result.codeResult.code;
+      onScan(code);
+      if (scannerAttemps < 5) {
+        Quagga.onDetected(onDetected);
+        scannerAttemps++;
+      }
     },
     [onScan]
   );

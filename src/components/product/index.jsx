@@ -7,14 +7,22 @@ import { useEffect, useState } from "react";
 export const Product = () => {
   const { code } = useParams();
   const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     const getProdut = async () => {
-      const res = products.filter(
-        (item) => item.code.toString() === code.toString()
-      )[0];
-      if (res) {
-        setProduct(res);
+      try {
+        const res = products.filter(
+          (item) => item.code.toString() === code.toString()
+        )[0];
+        if (res) {
+          setProduct(res);
+        }
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
     getProdut();
@@ -22,8 +30,10 @@ export const Product = () => {
 
   return (
     <Container>
-      {!product ? (
+      {loading ? (
         <p>Carregando...</p>
+      ) : !product ? (
+        <h2>Codigo: {code}</h2>
       ) : (
         <>
           <Link className="go-back" to="/">

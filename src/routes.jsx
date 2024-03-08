@@ -7,7 +7,7 @@ import { Product } from "./components/product";
 export function AppRoutes() {
   return (
     <Routes>
-      <Route path="/product/:code" element={<Product />} />
+      <Route path="/:code" element={<Product />} />
       <Route path="/" element={<MainPage />} />
     </Routes>
   );
