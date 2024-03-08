@@ -10,9 +10,10 @@ export function Scanner({ onScan }) {
 
     let isbn = result.codeResult.code;
     onScan(isbn);
-
-    scannerAttemps++;
-    Quagga.onDetected(onDetected);
+    if (scannerAttemps < 5) {
+      Quagga.onDetected(onDetected);
+      scannerAttemps++;
+    }
   };
   useEffect(() => {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
