@@ -12,10 +12,10 @@ export function Scanner({ onScan }) {
 
       let isbn = result.codeResult.code;
       onScan(isbn);
-      if (scannerAttemps < 5) {
-        Quagga.onDetected(onDetected);
-        scannerAttemps++;
-      }
+      // if (scannerAttemps < 5) {
+      //   Quagga.onDetected(onDetected);
+      //   scannerAttemps++;
+      // }
     },
     [scannerAttemps, onScan]
   );
@@ -35,7 +35,17 @@ export function Scanner({ onScan }) {
           numOfWorks: 1,
           lacate: true,
           decoder: {
-            readers: ["code_128_reader"],
+            readers: [
+              "code_128_reader",
+              // "ean_reader",
+              // "ean_8_reader",
+              // "code_39_reader",
+              // "code_39_vin_reader",
+              // "codabar_reader",
+              // "upc_reader",
+              // "upc_e_reader",
+              // "i2of5_reader",
+            ],
             // readers: ["ean_reader"],
           },
         },
