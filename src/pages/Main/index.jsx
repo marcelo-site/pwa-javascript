@@ -7,7 +7,7 @@ import { ButtonApp } from "../../components/ButtonApp";
 export default function Main() {
   const navigate = useNavigate();
   const detected = (data) => {
-    return navigate("/product/" + data);
+    return navigate("/" + data);
   };
   return (
     <>
