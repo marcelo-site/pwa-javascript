@@ -58,6 +58,7 @@ export const Description = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  margin: auto;
 
   > h3 {
     text-align: center;

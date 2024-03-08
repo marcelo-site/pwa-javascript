@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import MainPage from "./pages/Main";
-import { Product } from "./components/product";
+import { Product } from "./components/Product";
 
 export function AppRoutes() {
   return (

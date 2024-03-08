@@ -16,6 +16,7 @@ export const Product = () => {
         const res = products.filter(
           (item) => item.code.toString() === code.toString()
         )[0];
+
         if (res) {
           setProduct(res);
         }
@@ -38,7 +39,7 @@ export const Product = () => {
 
   return (
     <Container>
-      {!product || !product.length ? (
+      {!product ? (
         <h2>Codigo: {code}</h2>
       ) : (
         <>
@@ -49,7 +50,7 @@ export const Product = () => {
           <div>
             <h2>Detalhes</h2>
             <p>
-              <span>Precço</span>:{" "}
+              <span>Preço</span>:{" "}
               {product.price.toLocaleString("pt-br", {
                 style: "currency",
                 currency: "BRL",
