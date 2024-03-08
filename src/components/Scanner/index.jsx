@@ -50,7 +50,7 @@ export function Scanner({ onScan }) {
     } else {
       console.log("Erro1");
     }
-  }, []);
+  }, [onDetected]);
 
   return (
     <>
