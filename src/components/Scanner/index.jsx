@@ -35,8 +35,8 @@ export function Scanner({ onScan }) {
           numOfWorks: 1,
           lacate: true,
           decoder: {
-            // readers : ["code_128_reader"]
-            readers: ["ean_reader"],
+            readers: ["code_128_reader"],
+            // readers: ["ean_reader"],
           },
         },
         function (err) {
