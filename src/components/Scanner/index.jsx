@@ -17,7 +17,7 @@ export function Scanner({ onScan }) {
         scannerAttemps++;
       }
     },
-    [onScan]
+    [onScan, scannerAttemps]
   );
 
   useEffect(() => {
