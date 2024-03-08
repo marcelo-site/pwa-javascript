@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Scanner } from "../../components/Scanner";
-import { Results } from "../../components/Results";
+import { useNavigate } from "react-router-dom";
 
 export default function Main() {
-  const [isbn, setIsbn] = useState("9788576082675");
-  return (
-    <>
-      <Scanner onScan={setIsbn} />
-      {/* <Results isbn={isbn} /> */}
-    </>
-  );
+  const navigate = useNavigate();
+  const detected = (data) => {
+    return navigate("/product/" + data);
+  };
+  return <Scanner onScan={(data) => detected(data)} />;
 }

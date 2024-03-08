@@ -46,6 +46,5 @@ export const ScanMarker = styled.div`
     color: #ffffff;
     font-size: 14px;
     font-style: italic;
-    margin-top: 20px;
   }
 `;

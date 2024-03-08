@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 10px;
 
   .go-back {
     position: fixed;
@@ -31,6 +30,11 @@ export const Container = styled.div`
     text-decoration: line-through;
   }
 
+  h2,
+  h3 {
+    text-align: center;
+  }
+
   p {
     font-size: 16px;
     text-align: center;
@@ -43,5 +47,22 @@ export const Cover = styled.img`
 
   @media (min-width: 320px) and (max-width: 480px) {
     height: 150px;
+  }
+`;
+
+export const Description = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  > h3 {
+    text-align: center;
+  }
+  > p {
+    max-width: 100%;
   }
 `;

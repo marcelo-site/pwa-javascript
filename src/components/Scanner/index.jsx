@@ -2,26 +2,14 @@ import React, { useEffect } from "react";
 
 import { Container, Video, ScanMarker } from "./styles";
 import Quagga from "quagga";
-import { validateIsbn } from "../../services/books";
 
 export function Scanner({ onScan }) {
   let scannerAttemps = 0;
   const onDetected = (result) => {
     Quagga.offDetected(onDetected);
-    // alert("isbn valido");
 
     let isbn = result.codeResult.code;
-    alert(isbn);
-    // if (validateIsbn(isbn)) {
-    //   alert(isbn);
-    //   // onScan(isbn);
-    // } else {
-    //   if (scannerAttemps > 4) {
-    //     alert("Não é possivél ler o codigo do livro!");
-    //     // return;
-    //   }
-    //   // return;
-    // }
+    onScan(isbn);
 
     scannerAttemps++;
     Quagga.onDetected(onDetected);
@@ -69,20 +57,21 @@ export function Scanner({ onScan }) {
       <Container>
         <ScanMarker>
           <img
-            src="../../../images/scan-mark.svg"
+            src={process.env.PUBLIC_URL + "/images/scan-mark.png"}
             alt=""
-            width={260}
-            height={260}
+            style={{ width: "min(600px, 100%)", marginBottom: 40 }}
+            // width={"100%"}
+            height={"auto"}
+          />
+          <img
+            className="logo"
+            src={process.env.PUBLIC_URL + "/images/ScanProductBarcode2.png"}
+            alt=""
+            width={100}
+            height={80}
           />
           <p className="label">Aponte para o codigo de barras</p>
         </ScanMarker>
-        <img
-          className="logo"
-          src="../../../images/logo.svg"
-          alt=""
-          width={137}
-          height={70}
-        />
       </Container>
     </>
   );
