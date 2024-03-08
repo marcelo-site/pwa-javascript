@@ -6,19 +6,16 @@ import { useCallback } from "react";
 
 export function Scanner({ onScan }) {
   let scannerAttemps = 0;
-  const onDetected = useCallback(
-    (result) => {
-      Quagga.offDetected(onDetected);
+  const onDetected = useCallback((result) => {
+    Quagga.offDetected(onDetected);
 
-      let isbn = result.codeResult.code;
-      onScan(isbn);
-      if (scannerAttemps < 5) {
-        Quagga.onDetected(onDetected);
-        scannerAttemps++;
-      }
-    },
-    [result]
-  );
+    let isbn = result.codeResult.code;
+    onScan(isbn);
+    if (scannerAttemps < 5) {
+      Quagga.onDetected(onDetected);
+      scannerAttemps++;
+    }
+  }, []);
 
   useEffect(() => {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
