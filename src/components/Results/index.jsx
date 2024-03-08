@@ -4,7 +4,7 @@ import { Container, Cover, Description } from "./styles";
 import { products } from "../../dummyData";
 import { useEffect, useState } from "react";
 
-export const Product = () => {
+export const Results = () => {
   const { code } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
