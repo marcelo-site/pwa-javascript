@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 
 import { Container, Video, ScanMarker } from "./styles";
 import Quagga from "quagga";
+import { useCallback } from "react";
 
 export function Scanner({ onScan }) {
   let scannerAttemps = 0;
-  const onDetected = (result) => {
+  const onDetected = useCallback((result) => {
     Quagga.offDetected(onDetected);
 
     let isbn = result.codeResult.code;
@@ -14,7 +15,8 @@ export function Scanner({ onScan }) {
       Quagga.onDetected(onDetected);
       scannerAttemps++;
     }
-  };
+  });
+
   useEffect(() => {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       Quagga.init(
