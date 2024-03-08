@@ -28,11 +28,17 @@ export const Product = () => {
     getProdut();
   }, [code]);
 
+  if (loading) {
+    return (
+      <Container>
+        <p>Carregando...</p>
+      </Container>
+    );
+  }
+
   return (
     <Container>
-      {loading ? (
-        <p>Carregando...</p>
-      ) : !product ? (
+      {!product || !product.length ? (
         <h2>Codigo: {code}</h2>
       ) : (
         <>
