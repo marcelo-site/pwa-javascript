@@ -5,7 +5,7 @@ import Quagga from "quagga";
 import { useCallback } from "react";
 
 export function Scanner({ onScan }) {
-  let scannerAttemps = 0;
+  // let scannerAttemps = 0;
   const onDetected = useCallback(
     (result) => {
       Quagga.offDetected(onDetected);
