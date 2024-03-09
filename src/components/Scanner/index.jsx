@@ -5,19 +5,22 @@ import Quagga from "quagga";
 import { useCallback } from "react";
 
 export function Scanner({ onScan }) {
-  let scannerAttemps = 0;
+  // let scannerAttemps = 0;
   const onDetected = useCallback(
     (result) => {
-      Quagga.offDetected(onDetected);
+      // Quagga.offDetected(onDetected);
 
       let code = result.codeResult.code;
       onScan(code);
-      if (scannerAttemps < 5) {
-        Quagga.onDetected(onDetected);
-        scannerAttemps++;
-      }
+      // if (scannerAttemps < 5) {
+      Quagga.onDetected(onDetected);
+      scannerAttemps++;
+      // }
     },
-    [onScan, scannerAttemps]
+    [
+      onScan,
+      // ,scannerAttemps
+    ]
   );
 
   useEffect(() => {
@@ -34,6 +37,7 @@ export function Scanner({ onScan }) {
           },
           numOfWorks: 1,
           lacate: true,
+          halfSample: true,
           decoder: {
             readers: [
               "code_128_reader",
@@ -46,7 +50,6 @@ export function Scanner({ onScan }) {
               // "upc_e_reader",
               // "i2of5_reader",
             ],
-            // readers: ["ean_reader"],
           },
         },
         function (err) {
