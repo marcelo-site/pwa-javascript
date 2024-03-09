@@ -14,7 +14,7 @@ export function Scanner({ onScan }) {
       onScan(code);
       // if (scannerAttemps < 5) {
       Quagga.onDetected(onDetected);
-      scannerAttemps++;
+      // scannerAttemps++;
       // }
     },
     [
