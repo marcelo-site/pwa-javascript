@@ -41,7 +41,7 @@ export function Scanner({ onScan }) {
           decoder: {
             readers: [
               "code_128_reader",
-              // "ean_reader",
+              "ean_reader",
               // "ean_8_reader",
               // "code_39_reader",
               // "code_39_vin_reader",
